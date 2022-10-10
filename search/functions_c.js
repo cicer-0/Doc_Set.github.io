@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['randominit_118',['RANDOMINIT',['../class_random_math.html#ad3d9288d00b6222dbbb2cc93fed50012',1,'RandomMath']]]
+  ['randominit_128',['RANDOMINIT',['../class_random_math.html#a27868861531671dd55e77a22bbd3fc0d',1,'RandomMath']]]
 ];

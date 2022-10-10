@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Conjuntos: Fichero Fuente node.hpp</title>
+<title>Set: Fichero Fuente /home/cicer/Desktop/set/node.hpp</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -26,8 +26,8 @@
  <tr style="height: 56px;">
   <td id="projectlogo"><img alt="Logo" src="interseccion.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Conjuntos
-   &#160;<span id="projectnumber">1.0</span>
+   <div id="projectname">Set
+   &#160;<span id="projectnumber">1.1</span>
    </div>
    <div id="projectbrief">Manipulacion de conjuntos</div>
   </td>
@@ -103,29 +103,43 @@ $(document).ready(function(){initNavTree('node_8hpp_source.html',''); initResiza
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <a class="code" href="class_node.html#ae923d0417581dd19784d55b901f0f7f0">~Node</a>();</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_node.html#afdabc78643a5cbab194de94274fa4f8d">setValue</a>(T <a class="code" href="class_node.html#a4571aa2b7f240188970552b6598c1d67">value</a>);</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_node.html#a486348d99412bba1c889db7dd63ca8cb">setNext</a>(<a class="code" href="class_node.html">Node&lt;T&gt;</a> *<a class="code" href="class_node.html#a8bedac90cd0aedd2847dd49f671d4d4a">next</a>);</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  T *<a class="code" href="class_node.html#a5fa9ef92cd65ae720773a00d648966de">getValue</a>();</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  <a class="code" href="class_node.html">Node&lt;T&gt;</a> *<a class="code" href="class_node.html#afd985b504e37f4f8d7342f58e6035238">getNext</a>();</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  T *<a class="code" href="class_node.html#a219129e2eab7455a4dd0377124c83716">getValue</a>();</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  <a class="code" href="class_node.html">Node&lt;T&gt;</a> *<a class="code" href="class_node.html#a688501032615bbd05c9f42ef89d63db5">getNext</a>();</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="keyword">private</span>:</div>
 <div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="class_node.html#a4571aa2b7f240188970552b6598c1d67">   70</a></span>&#160;  T *<a class="code" href="class_node.html#a4571aa2b7f240188970552b6598c1d67">value</a>;</div>
 <div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="class_node.html#a8bedac90cd0aedd2847dd49f671d4d4a">   75</a></span>&#160;  <a class="code" href="class_node.html">Node&lt;T&gt;</a> *<a class="code" href="class_node.html#a8bedac90cd0aedd2847dd49f671d4d4a">next</a>;</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;};</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
+<div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="class_node.html#a0ac1d44cfe588be564acf25485029bd8">   78</a></span>&#160;<a class="code" href="class_node.html#a0ac1d44cfe588be564acf25485029bd8">Node&lt;T&gt;::Node</a>() : next(NULL), value(NULL) {}</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
+<div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="class_node.html#aa72a44d0679a17d33d7a6f2b41790125">   80</a></span>&#160;<a class="code" href="class_node.html#a0ac1d44cfe588be564acf25485029bd8">Node&lt;T&gt;::Node</a>(T value) : next(NULL) { this-&gt;value = <span class="keyword">new</span> T[1], *this-&gt;value = <a class="code" href="class_node.html#a4571aa2b7f240188970552b6598c1d67">value</a>; }</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
+<div class="line"><a name="l00082"></a><span class="lineno"><a class="line" href="class_node.html#ae923d0417581dd19784d55b901f0f7f0">   82</a></span>&#160;<a class="code" href="class_node.html#ae923d0417581dd19784d55b901f0f7f0">Node&lt;T&gt;::~Node</a>() {}</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
+<div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="class_node.html#afdabc78643a5cbab194de94274fa4f8d">   84</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_node.html#afdabc78643a5cbab194de94274fa4f8d">Node&lt;T&gt;::setValue</a>(T value) { this-&gt;value = value; }</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
+<div class="line"><a name="l00086"></a><span class="lineno"><a class="line" href="class_node.html#a486348d99412bba1c889db7dd63ca8cb">   86</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_node.html#a486348d99412bba1c889db7dd63ca8cb">Node&lt;T&gt;::setNext</a>(<a class="code" href="class_node.html">Node&lt;T&gt;</a> *next) { this-&gt;next = next; }</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
+<div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="class_node.html#a219129e2eab7455a4dd0377124c83716">   88</a></span>&#160;T *<a class="code" href="class_node.html#a219129e2eab7455a4dd0377124c83716">Node&lt;T&gt;::getValue</a>() { <span class="keywordflow">return</span> this-&gt;value; }</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
+<div class="line"><a name="l00090"></a><span class="lineno"><a class="line" href="class_node.html#a688501032615bbd05c9f42ef89d63db5">   90</a></span>&#160;<a class="code" href="class_node.html">Node&lt;T&gt;</a> *<a class="code" href="class_node.html#a688501032615bbd05c9f42ef89d63db5">Node&lt;T&gt;::getNext</a>() { <span class="keywordflow">return</span> this-&gt;next; }</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aclass_node_html_a5fa9ef92cd65ae720773a00d648966de"><div class="ttname"><a href="class_node.html#a5fa9ef92cd65ae720773a00d648966de">Node::getValue</a></div><div class="ttdeci">T * getValue()</div><div class="ttdoc">Obtener el atributo *value.</div></div>
-<div class="ttc" id="aclass_node_html_afd985b504e37f4f8d7342f58e6035238"><div class="ttname"><a href="class_node.html#afd985b504e37f4f8d7342f58e6035238">Node::getNext</a></div><div class="ttdeci">Node&lt; T &gt; * getNext()</div><div class="ttdoc">Obtener el atributo *next.</div></div>
+<div class="ttc" id="aclass_node_html_a688501032615bbd05c9f42ef89d63db5"><div class="ttname"><a href="class_node.html#a688501032615bbd05c9f42ef89d63db5">Node::getNext</a></div><div class="ttdeci">Node&lt; T &gt; * getNext()</div><div class="ttdoc">Obtener el atributo *next.</div><div class="ttdef"><b>Definition:</b> node.hpp:90</div></div>
 <div class="ttc" id="aclass_node_html_a8bedac90cd0aedd2847dd49f671d4d4a"><div class="ttname"><a href="class_node.html#a8bedac90cd0aedd2847dd49f671d4d4a">Node::next</a></div><div class="ttdeci">Node&lt; T &gt; * next</div><div class="ttdoc">Atributo para el enlace del siguiente nodo.</div><div class="ttdef"><b>Definition:</b> node.hpp:75</div></div>
+<div class="ttc" id="aclass_node_html_a219129e2eab7455a4dd0377124c83716"><div class="ttname"><a href="class_node.html#a219129e2eab7455a4dd0377124c83716">Node::getValue</a></div><div class="ttdeci">T * getValue()</div><div class="ttdoc">Obtener el atributo *value.</div><div class="ttdef"><b>Definition:</b> node.hpp:88</div></div>
 <div class="ttc" id="aclass_node_html"><div class="ttname"><a href="class_node.html">Node</a></div><div class="ttdoc">representacion de un nodo el cual tiene dato y enlace_al_siguiente_nodo.</div><div class="ttdef"><b>Definition:</b> node.hpp:21</div></div>
 <div class="ttc" id="aclass_node_html_a4571aa2b7f240188970552b6598c1d67"><div class="ttname"><a href="class_node.html#a4571aa2b7f240188970552b6598c1d67">Node::value</a></div><div class="ttdeci">T * value</div><div class="ttdoc">Atributo para el dato.</div><div class="ttdef"><b>Definition:</b> node.hpp:70</div></div>
-<div class="ttc" id="aclass_node_html_a0ac1d44cfe588be564acf25485029bd8"><div class="ttname"><a href="class_node.html#a0ac1d44cfe588be564acf25485029bd8">Node::Node</a></div><div class="ttdeci">Node()</div><div class="ttdoc">Construir un nuevo objeto Node el cual inician nulos.</div></div>
-<div class="ttc" id="aclass_node_html_afdabc78643a5cbab194de94274fa4f8d"><div class="ttname"><a href="class_node.html#afdabc78643a5cbab194de94274fa4f8d">Node::setValue</a></div><div class="ttdeci">void setValue(T value)</div><div class="ttdoc">Establecer el atributo *value.</div></div>
-<div class="ttc" id="aclass_node_html_ae923d0417581dd19784d55b901f0f7f0"><div class="ttname"><a href="class_node.html#ae923d0417581dd19784d55b901f0f7f0">Node::~Node</a></div><div class="ttdeci">~Node()</div><div class="ttdoc">Destruir el objeto Node.</div></div>
-<div class="ttc" id="aclass_node_html_a486348d99412bba1c889db7dd63ca8cb"><div class="ttname"><a href="class_node.html#a486348d99412bba1c889db7dd63ca8cb">Node::setNext</a></div><div class="ttdeci">void setNext(Node&lt; T &gt; *next)</div><div class="ttdoc">Establecer el atributo *next.</div></div>
+<div class="ttc" id="aclass_node_html_a0ac1d44cfe588be564acf25485029bd8"><div class="ttname"><a href="class_node.html#a0ac1d44cfe588be564acf25485029bd8">Node::Node</a></div><div class="ttdeci">Node()</div><div class="ttdoc">Construir un nuevo objeto Node el cual inician nulos.</div><div class="ttdef"><b>Definition:</b> node.hpp:78</div></div>
+<div class="ttc" id="aclass_node_html_afdabc78643a5cbab194de94274fa4f8d"><div class="ttname"><a href="class_node.html#afdabc78643a5cbab194de94274fa4f8d">Node::setValue</a></div><div class="ttdeci">void setValue(T value)</div><div class="ttdoc">Establecer el atributo *value.</div><div class="ttdef"><b>Definition:</b> node.hpp:84</div></div>
+<div class="ttc" id="aclass_node_html_ae923d0417581dd19784d55b901f0f7f0"><div class="ttname"><a href="class_node.html#ae923d0417581dd19784d55b901f0f7f0">Node::~Node</a></div><div class="ttdeci">~Node()</div><div class="ttdoc">Destruir el objeto Node.</div><div class="ttdef"><b>Definition:</b> node.hpp:82</div></div>
+<div class="ttc" id="aclass_node_html_a486348d99412bba1c889db7dd63ca8cb"><div class="ttname"><a href="class_node.html#a486348d99412bba1c889db7dd63ca8cb">Node::setNext</a></div><div class="ttdeci">void setNext(Node&lt; T &gt; *next)</div><div class="ttdoc">Establecer el atributo *next.</div><div class="ttdef"><b>Definition:</b> node.hpp:86</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="node_8hpp.html">node.hpp</a></li>
+    <li class="navelem"><a class="el" href="dir_a648d556c974e78c1462ad7de47f9e08.html">set</a></li><li class="navelem"><a class="el" href="node_8hpp.html">node.hpp</a></li>
     <li class="footer">Generado por
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>

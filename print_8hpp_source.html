@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Conjuntos: Fichero Fuente print.hpp</title>
+<title>Set: Fichero Fuente /home/cicer/Desktop/set/print.hpp</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -26,8 +26,8 @@
  <tr style="height: 56px;">
   <td id="projectlogo"><img alt="Logo" src="interseccion.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Conjuntos
-   &#160;<span id="projectnumber">1.0</span>
+   <div id="projectname">Set
+   &#160;<span id="projectnumber">1.1</span>
    </div>
    <div id="projectbrief">Manipulacion de conjuntos</div>
   </td>
@@ -183,19 +183,63 @@ $(document).ready(function(){initNavTree('print_8hpp_source.html',''); initResiz
 <div class="line"><a name="l00478"></a><span class="lineno">  478</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> _wBKGDLn(<a class="code" href="classoutput_1_1_color.html">Color</a> background, T message);</div>
 <div class="line"><a name="l00479"></a><span class="lineno">  479</span>&#160;  };</div>
 <div class="line"><a name="l00480"></a><span class="lineno">  480</span>&#160;} <span class="comment">// namespace output</span></div>
-<div class="line"><a name="l00481"></a><span class="lineno">  481</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00481"></a><span class="lineno">  481</span>&#160; </div>
+<div class="line"><a name="l00482"></a><span class="lineno">  482</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
+<div class="line"><a name="l00483"></a><span class="lineno"><a class="line" href="classoutput_1_1_print.html#ad8e31ca8b434801347da4905baceb6bb">  483</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classoutput_1_1_print.html#ad8e31ca8b434801347da4905baceb6bb">output::Print::_to</a>(<a class="code" href="classoutput_1_1_color.html">Color</a> color, <a class="code" href="classoutput_1_1_color.html">Color</a> background, T message)</div>
+<div class="line"><a name="l00484"></a><span class="lineno">  484</span>&#160;{</div>
+<div class="line"><a name="l00485"></a><span class="lineno">  485</span>&#160;  cout &lt;&lt; <span class="stringliteral">&quot;\033[38;2;&quot;</span> &lt;&lt; color.<a class="code" href="classoutput_1_1_color.html#a7d86880f03968e62545c2cd6f6936430">getRed</a>() &lt;&lt; <span class="stringliteral">&quot;;&quot;</span> &lt;&lt; color.<a class="code" href="classoutput_1_1_color.html#a5397da96cf75e6c1f34971e3c9cb2142">getGreen</a>() &lt;&lt; <span class="stringliteral">&quot;;&quot;</span> &lt;&lt; color.<a class="code" href="classoutput_1_1_color.html#a66faf78d72878d7d57fe8998b37fa30e">getBlue</a>() &lt;&lt; <span class="stringliteral">&quot;m&quot;</span></div>
+<div class="line"><a name="l00486"></a><span class="lineno">  486</span>&#160;       &lt;&lt; <span class="stringliteral">&quot;\033[48;2;&quot;</span> &lt;&lt; background.<a class="code" href="classoutput_1_1_color.html#a7d86880f03968e62545c2cd6f6936430">getRed</a>() &lt;&lt; <span class="stringliteral">&quot;;&quot;</span> &lt;&lt; background.<a class="code" href="classoutput_1_1_color.html#a5397da96cf75e6c1f34971e3c9cb2142">getGreen</a>() &lt;&lt; <span class="stringliteral">&quot;;&quot;</span> &lt;&lt; background.<a class="code" href="classoutput_1_1_color.html#a66faf78d72878d7d57fe8998b37fa30e">getBlue</a>() &lt;&lt; <span class="stringliteral">&quot;m&quot;</span> &lt;&lt; message &lt;&lt; <span class="stringliteral">&quot;\033[0m&quot;</span>;</div>
+<div class="line"><a name="l00487"></a><span class="lineno">  487</span>&#160;}</div>
+<div class="line"><a name="l00488"></a><span class="lineno">  488</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
+<div class="line"><a name="l00489"></a><span class="lineno"><a class="line" href="classoutput_1_1_print.html#a26605e60e6a8ea3dacc375125ebc07fd">  489</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classoutput_1_1_print.html#a26605e60e6a8ea3dacc375125ebc07fd">output::Print::_ln</a>(<a class="code" href="classoutput_1_1_color.html">Color</a> color, <a class="code" href="classoutput_1_1_color.html">Color</a> background, T message)</div>
+<div class="line"><a name="l00490"></a><span class="lineno">  490</span>&#160;{</div>
+<div class="line"><a name="l00491"></a><span class="lineno">  491</span>&#160;  output::Print::_to&lt;T&gt;(color, background, message);</div>
+<div class="line"><a name="l00492"></a><span class="lineno">  492</span>&#160;  cout &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
+<div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160;}</div>
+<div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
+<div class="line"><a name="l00495"></a><span class="lineno"><a class="line" href="classoutput_1_1_print.html#acd97266cfce7f534c4c402d570664abb">  495</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classoutput_1_1_print.html#acd97266cfce7f534c4c402d570664abb">output::Print::_wColor</a>(<a class="code" href="classoutput_1_1_color.html">Color</a> color, T message)</div>
+<div class="line"><a name="l00496"></a><span class="lineno">  496</span>&#160;{</div>
+<div class="line"><a name="l00497"></a><span class="lineno">  497</span>&#160;  cout &lt;&lt; <span class="stringliteral">&quot;\033[38;2;&quot;</span> &lt;&lt; color.<a class="code" href="classoutput_1_1_color.html#a7d86880f03968e62545c2cd6f6936430">getRed</a>() &lt;&lt; <span class="stringliteral">&quot;;&quot;</span> &lt;&lt; color.<a class="code" href="classoutput_1_1_color.html#a5397da96cf75e6c1f34971e3c9cb2142">getGreen</a>() &lt;&lt; <span class="stringliteral">&quot;;&quot;</span> &lt;&lt; color.<a class="code" href="classoutput_1_1_color.html#a66faf78d72878d7d57fe8998b37fa30e">getBlue</a>() &lt;&lt; <span class="stringliteral">&quot;m&quot;</span> &lt;&lt; message &lt;&lt; <span class="stringliteral">&quot;\033[0m&quot;</span>;</div>
+<div class="line"><a name="l00498"></a><span class="lineno">  498</span>&#160;}</div>
+<div class="line"><a name="l00499"></a><span class="lineno">  499</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
+<div class="line"><a name="l00500"></a><span class="lineno"><a class="line" href="classoutput_1_1_print.html#ac4dbdc22c61e43b44da898a5beddbf9c">  500</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classoutput_1_1_print.html#ac4dbdc22c61e43b44da898a5beddbf9c">output::Print::_wColorLn</a>(<a class="code" href="classoutput_1_1_color.html">Color</a> color, T message)</div>
+<div class="line"><a name="l00501"></a><span class="lineno">  501</span>&#160;{</div>
+<div class="line"><a name="l00502"></a><span class="lineno">  502</span>&#160;  output::Print::_wColor&lt;T&gt;(color, message);</div>
+<div class="line"><a name="l00503"></a><span class="lineno">  503</span>&#160;  cout &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
+<div class="line"><a name="l00504"></a><span class="lineno">  504</span>&#160;}</div>
+<div class="line"><a name="l00505"></a><span class="lineno">  505</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
+<div class="line"><a name="l00506"></a><span class="lineno"><a class="line" href="classoutput_1_1_print.html#a271737a3c101d815862a50f53924f9e0">  506</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classoutput_1_1_print.html#a271737a3c101d815862a50f53924f9e0">output::Print::_wBKGD</a>(<a class="code" href="classoutput_1_1_color.html">Color</a> background, T message)</div>
+<div class="line"><a name="l00507"></a><span class="lineno">  507</span>&#160;{</div>
+<div class="line"><a name="l00508"></a><span class="lineno">  508</span>&#160;  cout &lt;&lt; <span class="stringliteral">&quot;\033[48;2;&quot;</span> &lt;&lt; background.<a class="code" href="classoutput_1_1_color.html#a7d86880f03968e62545c2cd6f6936430">getRed</a>() &lt;&lt; <span class="stringliteral">&quot;;&quot;</span> &lt;&lt; background.<a class="code" href="classoutput_1_1_color.html#a5397da96cf75e6c1f34971e3c9cb2142">getGreen</a>() &lt;&lt; <span class="stringliteral">&quot;;&quot;</span> &lt;&lt; background.<a class="code" href="classoutput_1_1_color.html#a66faf78d72878d7d57fe8998b37fa30e">getBlue</a>() &lt;&lt; <span class="stringliteral">&quot;m&quot;</span> &lt;&lt; message &lt;&lt; <span class="stringliteral">&quot;\033[0m&quot;</span>;</div>
+<div class="line"><a name="l00509"></a><span class="lineno">  509</span>&#160;}</div>
+<div class="line"><a name="l00510"></a><span class="lineno">  510</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
+<div class="line"><a name="l00511"></a><span class="lineno"><a class="line" href="classoutput_1_1_print.html#ae44523d2c758b6277e3c54764d221805">  511</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classoutput_1_1_print.html#ae44523d2c758b6277e3c54764d221805">output::Print::_wBKGDLn</a>(<a class="code" href="classoutput_1_1_color.html">Color</a> background, T message)</div>
+<div class="line"><a name="l00512"></a><span class="lineno">  512</span>&#160;{</div>
+<div class="line"><a name="l00513"></a><span class="lineno">  513</span>&#160;  output::Print::_wBKGD&lt;T&gt;(background, message);</div>
+<div class="line"><a name="l00514"></a><span class="lineno">  514</span>&#160;  cout &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
+<div class="line"><a name="l00515"></a><span class="lineno">  515</span>&#160;}</div>
+<div class="line"><a name="l00516"></a><span class="lineno">  516</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
+<div class="ttc" id="aclassoutput_1_1_print_html_ac4dbdc22c61e43b44da898a5beddbf9c"><div class="ttname"><a href="classoutput_1_1_print.html#ac4dbdc22c61e43b44da898a5beddbf9c">output::Print::_wColorLn</a></div><div class="ttdeci">static void _wColorLn(Color color, T message)</div><div class="ttdef"><b>Definition:</b> print.hpp:500</div></div>
+<div class="ttc" id="aclassoutput_1_1_color_html_a5397da96cf75e6c1f34971e3c9cb2142"><div class="ttname"><a href="classoutput_1_1_color.html#a5397da96cf75e6c1f34971e3c9cb2142">output::Color::getGreen</a></div><div class="ttdeci">int getGreen()</div><div class="ttdoc">Obtener el atributo green.</div><div class="ttdef"><b>Definition:</b> print.cpp:40</div></div>
+<div class="ttc" id="aclassoutput_1_1_print_html_ae44523d2c758b6277e3c54764d221805"><div class="ttname"><a href="classoutput_1_1_print.html#ae44523d2c758b6277e3c54764d221805">output::Print::_wBKGDLn</a></div><div class="ttdeci">static void _wBKGDLn(Color background, T message)</div><div class="ttdef"><b>Definition:</b> print.hpp:511</div></div>
+<div class="ttc" id="aclassoutput_1_1_print_html_a26605e60e6a8ea3dacc375125ebc07fd"><div class="ttname"><a href="classoutput_1_1_print.html#a26605e60e6a8ea3dacc375125ebc07fd">output::Print::_ln</a></div><div class="ttdeci">static void _ln(Color color, Color background, T message)</div><div class="ttdef"><b>Definition:</b> print.hpp:489</div></div>
 <div class="ttc" id="aclassoutput_1_1_color_html_a260595b995ee7b7eceba669ecb24610b"><div class="ttname"><a href="classoutput_1_1_color.html#a260595b995ee7b7eceba669ecb24610b">output::Color::blue</a></div><div class="ttdeci">unsigned char blue</div><div class="ttdoc">Nivel de azul 0-255.</div><div class="ttdef"><b>Definition:</b> print.hpp:47</div></div>
 <div class="ttc" id="aclassoutput_1_1_color_html_ac9a47662dba0183ab44280ea66df1614"><div class="ttname"><a href="classoutput_1_1_color.html#ac9a47662dba0183ab44280ea66df1614">output::Color::red</a></div><div class="ttdeci">unsigned char red</div><div class="ttdoc">Nivel de rojo 0-255.</div><div class="ttdef"><b>Definition:</b> print.hpp:37</div></div>
 <div class="ttc" id="anamespaceoutput_html"><div class="ttname"><a href="namespaceoutput.html">output</a></div><div class="ttdoc">declaraciones de las clases que trabajaran para una salida a Colores.</div><div class="ttdef"><b>Definition:</b> print.hpp:23</div></div>
+<div class="ttc" id="aclassoutput_1_1_print_html_ad8e31ca8b434801347da4905baceb6bb"><div class="ttname"><a href="classoutput_1_1_print.html#ad8e31ca8b434801347da4905baceb6bb">output::Print::_to</a></div><div class="ttdeci">static void _to(Color color, Color background, T message)</div><div class="ttdef"><b>Definition:</b> print.hpp:483</div></div>
+<div class="ttc" id="aclassoutput_1_1_color_html_a66faf78d72878d7d57fe8998b37fa30e"><div class="ttname"><a href="classoutput_1_1_color.html#a66faf78d72878d7d57fe8998b37fa30e">output::Color::getBlue</a></div><div class="ttdeci">int getBlue()</div><div class="ttdoc">Obtener el atributo blue.</div><div class="ttdef"><b>Definition:</b> print.cpp:41</div></div>
+<div class="ttc" id="aclassoutput_1_1_print_html_a271737a3c101d815862a50f53924f9e0"><div class="ttname"><a href="classoutput_1_1_print.html#a271737a3c101d815862a50f53924f9e0">output::Print::_wBKGD</a></div><div class="ttdeci">static void _wBKGD(Color background, T message)</div><div class="ttdef"><b>Definition:</b> print.hpp:506</div></div>
 <div class="ttc" id="aclassoutput_1_1_color_html_a0fb1fd72a9e5ada803d5a421a2a8b48c"><div class="ttname"><a href="classoutput_1_1_color.html#a0fb1fd72a9e5ada803d5a421a2a8b48c">output::Color::green</a></div><div class="ttdeci">unsigned char green</div><div class="ttdoc">Nivel de verde 0-255.</div><div class="ttdef"><b>Definition:</b> print.hpp:42</div></div>
 <div class="ttc" id="aclassoutput_1_1_color_html"><div class="ttname"><a href="classoutput_1_1_color.html">output::Color</a></div><div class="ttdoc">Expresa un color de acuerdo con sus componentes rojo, verde y azul.</div><div class="ttdef"><b>Definition:</b> print.hpp:30</div></div>
+<div class="ttc" id="aclassoutput_1_1_color_html_a7d86880f03968e62545c2cd6f6936430"><div class="ttname"><a href="classoutput_1_1_color.html#a7d86880f03968e62545c2cd6f6936430">output::Color::getRed</a></div><div class="ttdeci">int getRed()</div><div class="ttdoc">Obtener el atributo red.</div><div class="ttdef"><b>Definition:</b> print.cpp:39</div></div>
+<div class="ttc" id="aclassoutput_1_1_print_html_acd97266cfce7f534c4c402d570664abb"><div class="ttname"><a href="classoutput_1_1_print.html#acd97266cfce7f534c4c402d570664abb">output::Print::_wColor</a></div><div class="ttdeci">static void _wColor(Color color, T message)</div><div class="ttdef"><b>Definition:</b> print.hpp:495</div></div>
 <div class="ttc" id="aclassoutput_1_1_print_html"><div class="ttname"><a href="classoutput_1_1_print.html">output::Print</a></div><div class="ttdoc">Clase encargada de la salida a colores.</div><div class="ttdef"><b>Definition:</b> print.hpp:121</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="print_8hpp.html">print.hpp</a></li>
+    <li class="navelem"><a class="el" href="dir_a648d556c974e78c1462ad7de47f9e08.html">set</a></li><li class="navelem"><a class="el" href="print_8hpp.html">print.hpp</a></li>
     <li class="footer">Generado por
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>

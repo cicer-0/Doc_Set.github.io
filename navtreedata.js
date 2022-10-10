@@ -22,7 +22,7 @@ for the JavaScript code in this file
 */
 var NAVTREE =
 [
-  [ "Conjuntos", "index.html", [
+  [ "Set", "index.html", [
     [ "Namespaces", "namespaces.html", [
       [ "Lista de 'namespaces'", "namespaces.html", "namespaces_dup" ]
     ] ],
